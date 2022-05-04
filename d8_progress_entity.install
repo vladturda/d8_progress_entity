@@ -1,0 +1,63 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+
+/**
+ * Creates the collection status vocabulary terms (deprecated).
+ */
+function d8_progress_entity_update_8001( &$sandbox ) {
+  //    $vocabulary = 'collection_status';
+  //
+  //    $terms = [
+  //        'Not Started' => [
+  //            'key' => 'initial',
+  //            'value' => 'Not Yet Started'
+  //        ],
+  //        'In Progress' => [
+  //            'key' => 'in-progress',
+  //            'value' => 'In Progress'
+  //        ],
+  //        'Completed' => [
+  //            'key' => 'complete',
+  //            'value' => 'Completed'
+  //        ]
+  //    ];
+  //
+  //    foreach ($terms as $term_name => $term_data) {
+  //        Term::create( [
+  //            'parent' => [],
+  //            'name' => $term_name,
+  //            'vid' => $vocabulary,
+  //            'field_collection_status_key' => $term_data['key'],
+  //            'field_collection_status_value' => $term_data['value']
+  //        ] )->save();
+  //    }
+}
+
+/**
+ * Creates the collection status vocabulary terms (updated).
+ */
+function d8_progress_entity_update_8002(&$sandbox) {
+  $vocabulary = 'collection_item_status';
+
+  $terms = [
+    'Not Started' => [
+      'key' => 'initial',
+    ],
+    'In Progress' => [
+      'key' => 'in-progress',
+    ],
+    'Completed' => [
+      'key' => 'completed',
+    ],
+  ];
+
+  foreach ($terms as $term_name => $term_data) {
+    Term::create([
+      'parent' => [],
+      'name' => $term_name,
+      'vid' => $vocabulary,
+      'field_collection_item_status_key' => $term_data['key'],
+    ])->save();
+  }
+}

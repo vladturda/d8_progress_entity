@@ -1,0 +1,17 @@
+services:
+  logger.channel.d8_progress_entity:
+    parent: logger.channel_base
+    arguments: ['d8_progress_entity']
+
+  d8_progress_entity.entity_manager:
+    class: Drupal\d8_progress_entity\ProgressEntityManager
+    arguments: ['@current_user', '@entity_type.manager']
+
+  d8_progress_entity.collection_item_progress_manager:
+    class: Drupal\d8_progress_entity\CollectionItemProgressManager
+    arguments: ['@current_user', '@entity_type.manager', '@d8_progress_entity.entity_manager', '@d8_progress_entity.collection_progress_manager']
+
+  d8_progress_entity.collection_progress_manager:
+    class: Drupal\d8_progress_entity\CollectionProgressManager
+    arguments: ['@current_user', '@entity_type.manager', '@d8_progress_entity.entity_manager']
+

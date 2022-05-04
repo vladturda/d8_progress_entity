@@ -1,0 +1,13 @@
+{
+    "name": "d8_progress_entity",
+    "type": "drupal-module",
+    "description": "Entity for tracking a user's progress for a given content item.",
+    "keywords": [
+    ],
+    "homepage": "https://www.drupal.org/project/d8_progress_entity",
+    "minimum-stability": "dev",
+    "support": {
+        "issues": "https://www.drupal.org/project/issues/d8_progress_entity",
+        "source": "http://cgit.drupalcode.org/d8_progress_entity"
+    }
+}

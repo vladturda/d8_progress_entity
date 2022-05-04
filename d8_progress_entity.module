@@ -1,0 +1,60 @@
+<?php
+
+/**
+ * @file
+ * Contains d8_progress_entity.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function d8_progress_entity_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the d8_progress_entity module.
+    case 'help.page.d8_progress_entity':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Entity for tracking a user&#039;&#039;s progress for a given content item.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function d8_progress_entity_theme() {
+  $theme = [];
+  $theme['progress_entity'] = [
+    'render element' => 'elements',
+    'file' => 'progress_entity.page.inc',
+    'template' => 'progress_entity',
+  ];
+  $theme['progress_entity_content_add_list'] = [
+    'render element' => 'content',
+    'variables' => ['content' => NULL],
+    'file' => 'progress_entity.page.inc',
+  ];
+  return $theme;
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK().
+ */
+function d8_progress_entity_theme_suggestions_progress_entity(array $variables) {
+  $suggestions = [];
+  $entity = $variables['elements']['#progress_entity'];
+  $sanitized_view_mode = strtr($variables['elements']['#view_mode'], '.', '_');
+
+  $suggestions[] = 'progress_entity__' . $sanitized_view_mode;
+  $suggestions[] = 'progress_entity__' . $entity->bundle();
+  $suggestions[] = 'progress_entity__' . $entity->bundle() . '__' . $sanitized_view_mode;
+  $suggestions[] = 'progress_entity__' . $entity->id();
+  $suggestions[] = 'progress_entity__' . $entity->id() . '__' . $sanitized_view_mode;
+  return $suggestions;
+}
+
+

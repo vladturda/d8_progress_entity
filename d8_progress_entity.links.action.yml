@@ -1,0 +1,10 @@
+entity.progress_entity.add_form:
+  route_name: entity.progress_entity.add_page
+  title: 'Add Progress entity'
+  appears_on:
+    - entity.progress_entity.collection
+entity.progress_entity_type.add_form:
+  route_name: entity.progress_entity_type.add_form
+  title: 'Add Progress entity type'
+  appears_on:
+    - entity.progress_entity_type.collection

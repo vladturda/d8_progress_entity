@@ -1,0 +1,33 @@
+add progress entity entities:
+  title: 'Create new Progress entity entities'
+
+administer progress entity entities:
+  title: 'Administer Progress entity entities'
+  description: 'Allow to access the administration form to configure Progress entity entities.'
+  restrict access: true
+
+delete progress entity entities:
+  title: 'Delete Progress entity entities'
+
+edit progress entity entities:
+  title: 'Edit Progress entity entities'
+
+view published progress entity entities:
+  title: 'View published Progress entity entities'
+
+view unpublished progress entity entities:
+  title: 'View unpublished Progress entity entities'
+
+view all progress entity revisions:
+  title: 'View all Progress entity revisions'
+
+revert all progress entity revisions:
+  title: 'Revert all Progress entity revisions'
+  description: 'Role requires permission <em>view Progress entity revisions</em> and <em>edit rights</em> for progress entity entities in question or <em>administer progress entity entities</em>.'
+
+delete all progress entity revisions:
+  title: 'Delete all revisions'
+  description: 'Role requires permission to <em>view Progress entity revisions</em> and <em>delete rights</em> for progress entity entities in question or <em>administer progress entity entities</em>.'
+
+#permission_callbacks:
+#  - \Drupal\d8_progress_entity\ProgressEntityPermissions::generatePermissions

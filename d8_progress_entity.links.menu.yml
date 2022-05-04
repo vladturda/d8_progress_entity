@@ -1,0 +1,17 @@
+
+# Progress entity menu items definition
+entity.progress_entity.collection:
+  title: 'Progress entity list'
+  route_name: entity.progress_entity.collection
+  description: 'List Progress entity entities'
+  parent: system.admin_structure
+  weight: 100
+
+
+# Progress entity type menu items definition
+entity.progress_entity_type.collection:
+  title: 'Progress entity type'
+  route_name: entity.progress_entity_type.collection
+  description: 'List Progress entity type (bundles)'
+  parent: system.admin_structure
+  weight: 99
